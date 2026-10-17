@@ -1,0 +1,1 @@
+This project is designed to explore and master Object-Oriented Programming (OOP) concepts through hands-on development. We develop the game incrementally, applying each concept step by step until we create a fully playable RPG that demonstrates **15+ OOP concepts and design patterns** in practice.
