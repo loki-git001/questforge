@@ -18,8 +18,8 @@ class Character:
             raise ValueError("Damage can't be less than 0")
         self._health = max(0, self._health - amount)
 
-    def describe(self) -> str:
-        return f"{self.name} has {self.health} HP and {self.attack_power} ATK"
+    def describe(self) -> None:
+        print(f"{self.name} has {self.health} HP and {self.attack_power} ATK")
 
     def attack(self, target: "Character") -> None:
         if not self.is_alive:
