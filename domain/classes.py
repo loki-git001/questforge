@@ -41,6 +41,10 @@ class Cleric(Character):
     def __init__(self, name: str) -> None:
         super().__init__(name, health=100, attack_power=16)
 
+    def attack(self, target: Character) -> None:
+        super().attack(target)
+        self.heal(self.attack_power // 2)
+
     def healing_touch(self, target: Character) -> None:
         cost = 3
         if self.health < cost:

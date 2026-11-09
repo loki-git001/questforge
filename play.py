@@ -1,24 +1,24 @@
-from domain.character import Character
-from domain.classes import Warrior, Mage, Cleric
+from domain.classes import Warrior, Mage, Rogue, Cleric
+from domain.battle import total_party_damage
 
 if __name__ == "__main__":
-    hero = Character("Aria", 100, 15)
-    hero.take_damage(50)
-    print(hero.health)
+    party = [Warrior("Bram"), Mage("Sylla"), Cleric("Eldrin"), Rogue("Kade")]
+    dummy = Warrior("Training Dummy")
 
-    warrior = Warrior("Bram")
-    mage = Mage("Sylla")
-    cleric = Cleric("Eldrin")
+    print("=" * 50)
+    print("BEFORE BATTLE")
+    for member in party:
+        member.describe()
 
+    print("TARGET")
+    dummy.describe()
 
-    warrior.describe()
-    mage.describe()
-    cleric.describe()
+    total_party_damage(party, dummy)
 
-    warrior.attack(mage)
-    mage.special_ability(warrior)
-    cleric.healing_touch(mage)
+    print("=" * 50)
+    print("AFTER BATTLE")
+    for member in party:
+        member.describe()
 
-    warrior.describe()
-    mage.describe()
-    cleric.describe()
+    print("TARGET")
+    dummy.describe()
